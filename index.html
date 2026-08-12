@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polish Masters Open 2026 — Poznań | Turniej squasha Masters 35+</title>
+<style>
+:root{
+  --black:#0a0a0a; --white:#f6f5f0; --yellow:#f5d21f; --gray:#171717;
+  --muted:#a8a8a8; --line:#2c2c2c; --max:1380px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.container{max-width:var(--max);margin:auto;padding:0 32px}
+.header{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-weight:900;letter-spacing:-1px;font-size:20px}.logo span{color:var(--yellow)}
+.links{display:flex;gap:28px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.actions{display:flex;align-items:center;gap:12px}.lang{font-size:12px;font-weight:800;border:1px solid #444;padding:10px 12px}.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);color:#000;padding:14px 22px;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;border:0}
+.hero{min-height:94vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:
+linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.56) 45%,rgba(0,0,0,.3) 100%),
+linear-gradient(135deg,#222 0%,#101010 52%,#3a3200 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 40%,rgba(245,210,31,.18),transparent 30%)}
+.hero-content{position:relative;z-index:2;padding:150px 32px 80px;max-width:var(--max);width:100%;margin:auto}
+.eyebrow{font-size:13px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px}
+h1{font-size:clamp(64px,10vw,150px);line-height:.83;letter-spacing:-.075em;margin:0 0 30px;font-weight:950;text-transform:uppercase}
+.hero-meta{display:flex;flex-wrap:wrap;gap:30px;font-size:18px;font-weight:800}.hero-meta div{border-left:2px solid var(--yellow);padding-left:12px}
+.hero-cta{margin-top:34px}.hero-note{margin-top:18px;color:#ccc;font-size:13px}
+.ticker{background:var(--yellow);color:#000;overflow:hidden;white-space:nowrap;border-bottom:1px solid #000}
+.ticker-track{display:flex;width:max-content;animation:scroll 22s linear infinite}
+.ticker span{font-weight:950;text-transform:uppercase;font-size:15px;letter-spacing:.08em;padding:17px 34px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.section{padding:110px 0}.dark{background:var(--black)}.light{background:var(--white);color:#0a0a0a}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:55px}
+.kicker{color:var(--yellow);font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:12px}
+.light .kicker{color:#756400}
+h2{font-size:clamp(42px,6vw,88px);line-height:.9;letter-spacing:-.06em;margin:10px 0 0;text-transform:uppercase}
+.lead{max-width:540px;color:#aaa;font-size:17px;line-height:1.55}.light .lead{color:#555}
+.facts{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:32px 22px;border-right:1px solid var(--line)}.fact:last-child{border:0}
+.fact b{display:block;font-size:52px;line-height:1;letter-spacing:-.05em}.fact small{display:block;margin-top:12px;color:#999;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.1em}
+.expect{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:var(--gray);padding:30px;min-height:190px;border:1px solid #252525}.card .num{font-size:12px;color:var(--yellow);font-weight:900}.card h3{font-size:27px;margin:35px 0 12px;letter-spacing:-.04em}.card p{color:#999;line-height:1.5;margin:0}
+.expect-list{display:flex;flex-direction:column;gap:22px;margin-top:40px}
+.expect-list li{list-style:none;border-left:2px solid var(--yellow);padding-left:16px;font-size:16px;line-height:1.55;color:#ccc}
+.expect-list li b{display:block;color:var(--white);font-weight:900;text-transform:uppercase;font-size:13px;letter-spacing:.04em;margin-bottom:4px}
+.club-card{background:var(--gray);border:1px solid #252525;padding:30px}
+.club-illustration{width:100%;height:auto;margin-bottom:26px;display:block}
+.club-card .kicker{margin-bottom:8px}
+.club-card h3{font-size:26px;letter-spacing:-.03em;margin:0 0 26px;text-transform:uppercase}
+.club-facts{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--line);padding-top:22px}
+.club-facts b{display:block;font-size:16px;font-weight:900;letter-spacing:-.02em}
+.club-facts small{display:block;margin-top:4px;color:#999;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.08em}
+/* ---- subpage: INFO ---- */
+.page-hero{padding:190px 0 60px;border-bottom:1px solid var(--line)}
+.breadcrumb{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#888}
+.breadcrumb a{color:var(--yellow)}
+.info-block{max-width:760px;padding:56px 0;border-bottom:1px solid var(--line)}
+.info-block:last-child{border-bottom:0}
+.info-block h2{font-size:clamp(30px,4vw,50px);margin:12px 0 20px}
+.info-block p{color:#aaa;line-height:1.6;margin:0 0 14px;max-width:640px}
+.info-list{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.info-list li{list-style:none;border-left:2px solid var(--yellow);padding-left:16px;color:#ccc;line-height:1.5}
+.photo{min-height:540px;background:linear-gradient(145deg,#333,#111 60%,#514800);position:relative;overflow:hidden}
+.photo:before{content:"SQUASH";position:absolute;right:-30px;bottom:-35px;font-size:150px;font-weight:950;letter-spacing:-.1em;color:rgba(255,255,255,.05);transform:rotate(-10deg)}
+.photo.map{background:#0f100b}
+.photo.map:before{content:none}
+.city-map-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.photo-label{position:absolute;bottom:24px;left:24px;background:var(--yellow);color:#000;padding:10px 14px;font-weight:900;font-size:11px;text-transform:uppercase}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.package{background:#151515;border:1px solid #292929;padding:34px;display:flex;flex-direction:column;min-height:390px}.package.featured{border:2px solid var(--yellow)}
+.package h3{font-size:30px;margin:15px 0}.price{font-size:44px;font-weight:950;letter-spacing:-.06em;margin-bottom:24px}.package ul{padding-left:18px;color:#aaa;line-height:1.8}.package .btn{margin-top:auto}
+.faq{max-width:980px;margin:auto}.faq details{border-top:1px solid #333;padding:22px 0}.faq details:last-child{border-bottom:1px solid #333}.faq summary{cursor:pointer;font-size:21px;font-weight:800;list-style:none;display:flex;justify-content:space-between}.faq summary:after{content:"+";color:var(--yellow)}
+.deep{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.deep a{background:#151515;min-height:210px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #282828}.deep strong{font-size:24px}.arrow{font-size:30px;color:var(--yellow)}
+.cycle{background:var(--yellow);color:#000}.cycle h2{max-width:850px}.cities{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:55px}.city{border-top:2px solid #000;padding:22px 0}.city b{font-size:44px;letter-spacing:-.06em}.city span{display:block;text-transform:uppercase;font-weight:900;font-size:11px;margin-top:8px}
+.tour{display:grid;grid-template-columns:1fr 2fr;gap:50px}.tour-list{border-top:1px solid #333}.tour-row{display:grid;grid-template-columns:1.4fr .8fr .7fr auto;gap:15px;padding:20px 0;border-bottom:1px solid #333;align-items:center}.tour-row b{font-size:18px}.tour-row span{color:#999;font-size:12px}
+.cta{padding:120px 0;background:linear-gradient(120deg,#161616,#090909)}.cta-inner{display:flex;justify-content:space-between;align-items:end;gap:40px}.cta h2{font-size:clamp(55px,9vw,125px);max-width:900px}.cta p{color:#aaa;max-width:450px;line-height:1.5}
+footer{padding:45px 0;border-top:1px solid #292929}.footer{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer small{color:#777}.footer-links{display:flex;gap:22px;font-size:11px;text-transform:uppercase;font-weight:800}
+@media(max-width:900px){
+ .links{display:none}.facts{grid-template-columns:repeat(2,1fr)}.fact:nth-child(2n){border-right:0}.expect,.tour,.cta-inner{grid-template-columns:1fr;display:grid}.packages{grid-template-columns:1fr}.deep{grid-template-columns:repeat(2,1fr)}.cities{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+ .container,.hero-content{padding-left:20px;padding-right:20px}.nav{height:68px}.hero{min-height:88vh}.hero-content{padding-top:120px;padding-bottom:55px}h1{font-size:62px}.hero-meta{font-size:15px;gap:18px}.section{padding:75px 0}.section-head{display:block}.facts{grid-template-columns:1fr 1fr}.fact{padding:22px 14px}.fact b{font-size:39px}.cards,.deep{grid-template-columns:1fr}.photo{min-height:330px}.tour-row{grid-template-columns:1fr 1fr}.tour-row .btn{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#">POLISH <span>MASTERS</span> OPEN</a>
+    <nav class="links">
+      <a href="#expect">Doświadczenie</a><a href="#packages">Pakiety</a><a href="#schedule">Harmonogram</a><a href="#faq">FAQ</a><a href="#cycle">Cykl PMO</a>
+    </nav>
+    <div class="actions"><button class="lang">PL / EN</button><a class="btn" href="#register">Zapisz się</a></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Polish Masters Open · Edycja 2026</div>
+    <h1>Graj.<br>Poznawaj.<br>Odkrywaj.</h1>
+    <div class="hero-meta">
+      <div>15–18 PAŹDZIERNIKA 2026</div><div>POZNAŃ, POLSKA</div><div>MASTERS 35+</div>
+    </div>
+    <div class="hero-cta"><a class="btn" href="#register">Zapisz się przez Best of Five →</a></div>
+    <div class="hero-note">Profesjonalny turniej squasha Masters — i Twoja kolejna podróż przez Polskę.</div>
+  </div>
+</section>
+
+<div class="ticker"><div class="ticker-track">
+  <span>ZAPISY STARTUJĄ · 01.06.2026</span><span>ZAPISY KOŃCZĄ SIĘ · 30.09.2026</span><span>MASTERS 35+ · POZNAŃ</span>
+  <span>ZAPISY STARTUJĄ · 01.06.2026</span><span>ZAPISY KOŃCZĄ SIĘ · 30.09.2026</span><span>MASTERS 35+ · POZNAŃ</span>
+</div></div>
+
+<section class="section dark">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">Kluczowe fakty</div><h2>Wszystko<br>w jednym miejscu.</h2></div><p class="lead">Turniej zbudowany wokół dobrego squasha, międzynarodowej społeczności i doświadczenia odkrywania kolejnego polskiego miasta.</p></div>
+  <div class="facts">
+    <div class="fact"><b>4</b><small>Dni</small></div><div class="fact"><b>8+</b><small>Kategorii wiekowych</small></div><div class="fact"><b>15+</b><small>Krajów docelowych</small></div><div class="fact"><b>35+</b><small>Zawodnicy Masters</small></div><div class="fact"><b>1</b><small>Nowe miasto do odkrycia</small></div>
+  </div>
+</div>
+</section>
+
+<section class="section dark" id="expect">
+<div class="container">
+  <div class="expect">
+    <div>
+      <div class="kicker">Czego się spodziewać</div>
+      <h2>Przyjedź na squasha.<br>Zostań na całe doświadczenie.</h2>
+      <p class="lead">Od porannych meczów do wieczornych rozmów — PMO to więcej niż turniej. Poznaj zawodników z całej Europy, rywalizuj, odpocznij i odkryj Poznań.</p>
+      <ul class="expect-list">
+        <li><b>Sportowa rywalizacja</b>Mecze od rana do wieczora — kilka dni dobrze zorganizowanych rozgrywek Masters.</li>
+        <li><b>Międzynarodowe grono</b>Poznaj zawodników z innych krajów i stań się częścią społeczności Masters.</li>
+        <li><b>Świetny obiekt</b>Korty wysokiej jakości z restauracją i zakwaterowaniem na miejscu, a między meczami — pokazy i degustacje.</li>
+        <li><b>Odkryj Poznań</b>Zamień turniej w city break — jedzenie, architektura, kultura i lokalne atrakcje.</li>
+      </ul>
+    </div>
+
+    <div class="club-card">
+      <svg class="club-illustration" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustracja kortu squashowego">
+        <rect width="400" height="220" fill="#0a0a0a"/>
+        <rect x="24" y="24" width="352" height="140" fill="none" stroke="#f5d21f" stroke-width="2"/>
+        <line x1="24" y1="94" x2="376" y2="94" stroke="#f5d21f" stroke-width="1" stroke-dasharray="4 4"/>
+        <rect x="64" y="24" width="58" height="70" fill="none" stroke="#f5d21f" stroke-width="1"/>
+        <rect x="278" y="24" width="58" height="70" fill="none" stroke="#f5d21f" stroke-width="1"/>
+        <circle cx="200" cy="144" r="10" fill="#f5d21f"/>
+        <text x="200" y="196" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="800" letter-spacing="1" text-anchor="middle">FAIR PLAY SQUASH CLUB — POZNAŃ</text>
+      </svg>
+      <div class="kicker">Klub-gospodarz · 2026</div>
+      <h3>Fair Play Squash Club, Poznań</h3>
+      <div class="club-facts">
+        <div><b>Poznań–Ławica, 15 min</b><small>Lotnisko</small></div>
+        <div><b>Poznań Główny, 10 min</b><small>Dworzec</small></div>
+        <div><b>Stary Rynek, 12 min</b><small>Centrum</small></div>
+        <div><b>Hotel, restauracja, korty</b><small>Na miejscu</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section light">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">Miasto-gospodarz</div><h2>Poznań<br>czeka.</h2></div><p class="lead">Cel Twojego turnieju to jednocześnie kolejne polskie miasto do odkrycia. Treść tej sekcji zamieniamy przy każdej nowej edycji PMO.</p></div>
+  <div class="expect">
+    <div class="photo map">
+      <svg class="city-map-svg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa orientacyjna Poznania z lokalizacją lotniska, hotelu, klubu Fair Play i centrum">
+        <defs>
+          <radialGradient id="glow" cx="70%" cy="35%" r="60%">
+            <stop offset="0%" stop-color="#3a3200" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#0f100b" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="600" height="700" fill="#0f100b"/>
+        <rect width="600" height="700" fill="url(#glow)"/>
+
+        <!-- rzeka Warta -->
+        <path d="M 560 -20 C 520 120, 555 260, 505 380 C 465 470, 500 600, 470 720 L 600 720 L 600 -20 Z" fill="#173238" opacity="0.75"/>
+        <path d="M 560 -20 C 520 120, 555 260, 505 380 C 465 470, 500 600, 470 720" fill="none" stroke="#2c5a63" stroke-width="2" opacity="0.5"/>
+
+        <!-- park -->
+        <ellipse cx="150" cy="140" rx="120" ry="70" fill="#1c2812" opacity="0.6"/>
+
+        <!-- pierscien ulic wokol Starego Rynku -->
+        <ellipse cx="330" cy="300" rx="150" ry="130" fill="none" stroke="#3a3a34" stroke-width="1.5" opacity="0.7"/>
+        <ellipse cx="330" cy="300" rx="95" ry="80" fill="none" stroke="#3a3a34" stroke-width="1.2" opacity="0.55"/>
+
+        <!-- ulice -->
+        <path d="M 0 480 C 150 440, 260 470, 380 410" stroke="#33332c" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M 40 620 C 180 560, 300 560, 460 470" stroke="#33332c" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M 330 60 L 330 170" stroke="#33332c" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M 200 300 L 20 260" stroke="#33332c" stroke-width="1.5" fill="none" opacity="0.5"/>
+        <path d="M 420 300 L 470 250" stroke="#33332c" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+        <!-- znacznik: LOTNISKO -->
+        <g>
+          <line x1="120" y1="500" x2="120" y2="560" stroke="#f5d21f" stroke-width="1.5" opacity="0.7"/>
+          <path d="M120 480 c-13 0-23 10-23 23 0 17 23 37 23 37s23-20 23-37c0-13-10-23-23-23z" fill="#f5d21f" stroke="#0a0a0a" stroke-width="2"/>
+          <circle cx="120" cy="503" r="7" fill="#0a0a0a"/>
+          <rect x="42" y="565" width="156" height="30" fill="#0a0a0a" stroke="#f5d21f" stroke-width="1"/>
+          <text x="120" y="585" fill="#f5d21f" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="900" letter-spacing=".5" text-anchor="middle">LOTNISKO ŁAWICA</text>
+        </g>
+
+        <!-- znacznik: CENTRUM / STARY RYNEK -->
+        <g>
+          <line x1="330" y1="230" x2="330" y2="170" stroke="#f5d21f" stroke-width="1.5" opacity="0.7"/>
+          <path d="M330 250 c-13 0-23 10-23 23 0 17 23 37 23 37s23-20 23-37c0-13-10-23-23-23z" fill="#f5d21f" stroke="#0a0a0a" stroke-width="2"/>
+          <circle cx="330" cy="273" r="7" fill="#0a0a0a"/>
+          <rect x="222" y="128" width="216" height="42" fill="#0a0a0a" stroke="#f5d21f" stroke-width="1"/>
+          <text x="330" y="146" fill="#f5d21f" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="900" letter-spacing=".5" text-anchor="middle">STARY RYNEK · CENTRUM</text>
+          <text x="330" y="162" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing=".3" text-anchor="middle">restauracje i atrakcje</text>
+        </g>
+
+        <!-- znacznik: FAIR PLAY SQUASH CLUB -->
+        <g>
+          <line x1="400" y1="420" x2="470" y2="470" stroke="#f5d21f" stroke-width="1.5" opacity="0.7"/>
+          <path d="M400 400 c-13 0-23 10-23 23 0 17 23 37 23 37s23-20 23-37c0-13-10-23-23-23z" fill="#f5d21f" stroke="#0a0a0a" stroke-width="2"/>
+          <circle cx="400" cy="423" r="7" fill="#0a0a0a"/>
+          <rect x="392" y="472" width="208" height="42" fill="#0a0a0a" stroke="#f5d21f" stroke-width="1"/>
+          <text x="496" y="490" fill="#f5d21f" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="900" letter-spacing=".3" text-anchor="middle">FAIR PLAY SQUASH CLUB</text>
+          <text x="496" y="506" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing=".3" text-anchor="middle">korty turnieju</text>
+        </g>
+
+        <!-- znacznik: HOTEL (na terenie klubu) -->
+        <g>
+          <line x1="440" y1="440" x2="500" y2="410" stroke="#f5d21f" stroke-width="1.2" opacity="0.6" stroke-dasharray="3 3"/>
+          <path d="M440 424 c-10 0-18 8-18 18 0 13 18 29 18 29s18-16 18-29c0-10-8-18-18-18z" fill="#0f100b" stroke="#f5d21f" stroke-width="2"/>
+          <circle cx="440" cy="442" r="5" fill="#f5d21f"/>
+          <rect x="500" y="392" width="90" height="36" fill="#0a0a0a" stroke="#f5d21f" stroke-width="1"/>
+          <text x="545" y="406" fill="#f5d21f" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="900" letter-spacing=".3" text-anchor="middle">HOTEL</text>
+          <text x="545" y="420" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle">na terenie klubu</text>
+        </g>
+
+        <!-- roza wiatrow -->
+        <g transform="translate(548,60)" opacity="0.8">
+          <circle r="24" fill="none" stroke="#a8a8a8" stroke-width="1"/>
+          <path d="M0 -20 L6 -2 L0 -8 L-6 -2 Z" fill="#f5d21f"/>
+          <text x="0" y="-28" fill="#a8a8a8" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="900" text-anchor="middle">N</text>
+        </g>
+
+        <text x="600" y="700" fill="rgba(255,255,255,.05)" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="950" letter-spacing="-8" transform="rotate(-10 600 700) translate(-260,-40)">POZNAŃ</text>
+      </svg>
+      <span class="photo-label">Mapa orientacyjna — nie w skali</span>
+    </div>
+    <div>
+      <div class="cards" style="grid-template-columns:1fr 1fr">
+        <article class="card" style="background:#fff;border-color:#ddd;color:#111"><span class="num">DOJAZD</span><h3>Lotnisko</h3><p style="color:#666">Orientacyjny czas dojazdu i opcje transportu.</p></article>
+        <article class="card" style="background:#fff;border-color:#ddd;color:#111"><span class="num">NOCLEG</span><h3>Zakwaterowanie</h3><p style="color:#666">Hotele i noclegi blisko klubu.</p></article>
+        <article class="card" style="background:#fff;border-color:#ddd;color:#111"><span class="num">JEDZENIE</span><h3>Restauracje</h3><p style="color:#666">Polecane restauracje i lokalne smaki.</p></article>
+        <article class="card" style="background:#fff;border-color:#ddd;color:#111"><span class="num">ZWIEDZANIE</span><h3>Co robić</h3><p style="color:#666">Najważniejsze miejsca, kultura i atrakcje.</p></article>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section dark" id="packages">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">Pakiety startowe</div><h2>Wybierz swój<br>pakiet.</h2></div><p class="lead">Pakiety są przykładowe do czasu potwierdzenia finalnych danych wydarzenia. Każdy przycisk prowadzi do Best of Five.</p></div>
+  <div class="packages">
+    <article class="package"><div class="kicker">Standard</div><h3>Wejście Masters</h3><div class="price">€ XX</div><ul><li>Udział w turnieju</li><li>Pakiet zawodnika</li><li>Harmonogram rozgrywek</li></ul><a class="btn" href="#register">Wybierz pakiet</a></article>
+    <article class="package featured"><div class="kicker">Polecany</div><h3>Pełne doświadczenie</h3><div class="price">€ XX</div><ul><li>Udział w turnieju</li><li>Pakiet zawodnika</li><li>Wydarzenie towarzyskie</li><li>Dodatkowe doświadczenie</li></ul><a class="btn" href="#register">Wybierz pakiet</a></article>
+    <article class="package"><div class="kicker">W przygotowaniu</div><h3>Premium</h3><div class="price">€ XX</div><ul><li>Pakiet turniejowy Premium</li><li>Dodatkowe benefity</li><li>Usługi dodatkowe</li></ul><a class="btn" href="#register">Wybierz pakiet</a></article>
+  </div>
+</div>
+</section>
+
+<section class="section dark" id="schedule">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">Wszystkie sesje</div><h2>Harmonogram.</h2></div><p class="lead">Elastyczny harmonogram wydarzenia, dopasowany do różnych kategorii wiekowych i etapów rozgrywek.</p></div>
+  <div class="tour-list">
+    <div class="tour-row"><b>Czwartek · 15 paź</b><span>Rejestracja / Rozgrzewka</span><span>16:00–21:00</span><a class="btn" href="#">Szczegóły</a></div>
+    <div class="tour-row"><b>Piątek · 16 paź</b><span>Kwalifikacje / 1. runda</span><span>09:00–20:00</span><a class="btn" href="#">Szczegóły</a></div>
+    <div class="tour-row"><b>Sobota · 17 paź</b><span>Ćwierćfinały / Półfinały</span><span>09:00–21:00</span><a class="btn" href="#">Szczegóły</a></div>
+    <div class="tour-row"><b>Niedziela · 18 paź</b><span>Finały / Ceremonia</span><span>09:00–16:00</span><a class="btn" href="#">Szczegóły</a></div>
+  </div>
+</div>
+</section>
+
+<section class="section dark" id="faq">
+<div class="container faq">
+  <div class="section-head"><div><div class="kicker">Warto wiedzieć</div><h2>FAQ.</h2></div></div>
+  <details><summary>Kto może zagrać?</summary><p class="lead">PMO jest przeznaczony dla zawodników Masters w wieku 35+, którzy spełniają wymagania licencyjne.</p></details>
+  <details><summary>Czy potrzebuję licencji ESF?</summary><p class="lead">Tak. Zawodnicy powinni mieć aktywną licencję ESF; aby liczyć się do rankingu krajowego, potrzebna jest dodatkowo aktywna licencja PZSQ.</p></details>
+  <details><summary>Jak się zapisać?</summary><p class="lead">Zapisy odbywają się zewnętrznie, w systemie Best of Five. Użyj dowolnego przycisku „Zapisz się” na stronie.</p></details>
+  <details><summary>Gdzie się zatrzymać?</summary><p class="lead">Rekomendacje noclegowe będą dostarczane dla każdego miasta i edycji turnieju.</p></details>
+  <details><summary>A co z transportem?</summary><p class="lead">Strona wydarzenia zawiera praktyczne informacje o dojeździe z lotniska, dworca i komunikacji lokalnej.</p></details>
+</div>
+</section>
+
+<section class="section dark">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">Chcesz wiedzieć więcej?</div><h2>Wszystkie szczegóły<br>tutaj.</h2></div></div>
+  <div class="deep">
+    <a href="info.html"><strong>INFO</strong><span class="arrow">↗</span></a>
+    <a href="#schedule"><strong>HARMONOGRAM</strong><span class="arrow">↗</span></a>
+    <a href="#register"><strong>ZAPISY</strong><span class="arrow">↗</span></a>
+    <a href="#cycle"><strong>CYKL PMO</strong><span class="arrow">↗</span></a>
+    <a href="#faq"><strong>FAQ</strong><span class="arrow">↗</span></a>
+  </div>
+</div>
+</section>
+
+<section class="section cycle" id="cycle">
+<div class="container">
+  <div class="kicker">Koncepcja PMO</div><h2>Jeden turniej.<br>Cztery miasta.<br>Jedna podróż przez Polskę.</h2>
+  <p style="max-width:650px;font-size:18px;line-height:1.55">Polish Masters Open to coroczna podróż: inny turniej, inne polskie miasto i nowe doświadczenie każdego roku. Wracaj po squasha — zostań dla ludzi, miejsc i wspomnień.</p>
+  <div class="cities">
+    <div class="city"><b>01</b><span>Poznań</span></div><div class="city"><b>02</b><span>Gdańsk</span></div><div class="city"><b>03</b><span>Wrocław</span></div><div class="city"><b>04</b><span>Kraków</span></div>
+  </div>
+</div>
+</section>
+
+<section class="section dark">
+<div class="container">
+  <div class="tour">
+    <div><div class="kicker">Odkryj więcej squasha w Polsce</div><h2>Polish Squash Masters Tour.</h2><p class="lead">Krótki przegląd krajowych turniejów Masters dla zawodników, którzy chcą zobaczyć jeszcze więcej Polski.</p></div>
+    <div class="tour-list">
+      <div class="tour-row"><b>Masters Open Poznań</b><span>Poznań</span><span>12.09</span><a class="btn" href="#">Zapisz się</a></div>
+      <div class="tour-row"><b>Masters Classic</b><span>Wrocław</span><span>03.10</span><a class="btn" href="#">Zapisz się</a></div>
+      <div class="tour-row"><b>Masters Cup</b><span>Gdańsk</span><span>24.10</span><a class="btn" href="#">Zapisz się</a></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="cta" id="register">
+<div class="container cta-inner">
+  <div><div class="kicker">Polish Masters Open · Poznań · 2026</div><h2>Bądź częścią tego.</h2></div>
+  <div><p>Profesjonalny squash. Międzynarodowe grono. Nowe polskie miasto. Twoje kolejne doświadczenie Masters zaczyna się tutaj.</p><a class="btn" href="#">Zapisz się przez Best of Five →</a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer">
+  <div class="logo">POLISH <span>MASTERS</span> OPEN × PZSQ</div>
+  <div class="footer-links"><a href="#">Regulamin</a><a href="#">Prywatność</a><a href="#">Kontakt</a></div>
+  <small>© 2026 Polski Związek Squasha</small>
+</div>
+</footer>
+</body>
+</html>

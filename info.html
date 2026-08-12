@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Info i regulamin — Polish Masters Open</title>
+<meta name="description" content="Pełne informacje o Polish Masters Open: uczestnictwo, zapisy, dojazd i zakwaterowanie.">
+<style>
+:root{
+  --black:#0a0a0a; --white:#f6f5f0; --yellow:#f5d21f; --gray:#171717;
+  --muted:#a8a8a8; --line:#2c2c2c; --max:1380px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.container{max-width:var(--max);margin:auto;padding:0 32px}
+.header{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-weight:900;letter-spacing:-1px;font-size:20px}.logo span{color:var(--yellow)}
+.links{display:flex;gap:28px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.actions{display:flex;align-items:center;gap:12px}.lang{font-size:12px;font-weight:800;border:1px solid #444;padding:10px 12px}.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);color:#000;padding:14px 22px;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;border:0}
+.hero{min-height:94vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:
+linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.56) 45%,rgba(0,0,0,.3) 100%),
+linear-gradient(135deg,#222 0%,#101010 52%,#3a3200 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 40%,rgba(245,210,31,.18),transparent 30%)}
+.hero-content{position:relative;z-index:2;padding:150px 32px 80px;max-width:var(--max);width:100%;margin:auto}
+.eyebrow{font-size:13px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:20px}
+h1{font-size:clamp(64px,10vw,150px);line-height:.83;letter-spacing:-.075em;margin:0 0 30px;font-weight:950;text-transform:uppercase}
+.hero-meta{display:flex;flex-wrap:wrap;gap:30px;font-size:18px;font-weight:800}.hero-meta div{border-left:2px solid var(--yellow);padding-left:12px}
+.hero-cta{margin-top:34px}.hero-note{margin-top:18px;color:#ccc;font-size:13px}
+.ticker{background:var(--yellow);color:#000;overflow:hidden;white-space:nowrap;border-bottom:1px solid #000}
+.ticker-track{display:flex;width:max-content;animation:scroll 22s linear infinite}
+.ticker span{font-weight:950;text-transform:uppercase;font-size:15px;letter-spacing:.08em;padding:17px 34px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.section{padding:110px 0}.dark{background:var(--black)}.light{background:var(--white);color:#0a0a0a}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:55px}
+.kicker{color:var(--yellow);font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:12px}
+.light .kicker{color:#756400}
+h2{font-size:clamp(42px,6vw,88px);line-height:.9;letter-spacing:-.06em;margin:10px 0 0;text-transform:uppercase}
+.lead{max-width:540px;color:#aaa;font-size:17px;line-height:1.55}.light .lead{color:#555}
+.facts{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:32px 22px;border-right:1px solid var(--line)}.fact:last-child{border:0}
+.fact b{display:block;font-size:52px;line-height:1;letter-spacing:-.05em}.fact small{display:block;margin-top:12px;color:#999;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.1em}
+.expect{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:var(--gray);padding:30px;min-height:190px;border:1px solid #252525}.card .num{font-size:12px;color:var(--yellow);font-weight:900}.card h3{font-size:27px;margin:35px 0 12px;letter-spacing:-.04em}.card p{color:#999;line-height:1.5;margin:0}
+.expect-list{display:flex;flex-direction:column;gap:22px;margin-top:40px}
+.expect-list li{list-style:none;border-left:2px solid var(--yellow);padding-left:16px;font-size:16px;line-height:1.55;color:#ccc}
+.expect-list li b{display:block;color:var(--white);font-weight:900;text-transform:uppercase;font-size:13px;letter-spacing:.04em;margin-bottom:4px}
+.club-card{background:var(--gray);border:1px solid #252525;padding:30px}
+.club-illustration{width:100%;height:auto;margin-bottom:26px;display:block}
+.club-card .kicker{margin-bottom:8px}
+.club-card h3{font-size:26px;letter-spacing:-.03em;margin:0 0 26px;text-transform:uppercase}
+.club-facts{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--line);padding-top:22px}
+.club-facts b{display:block;font-size:16px;font-weight:900;letter-spacing:-.02em}
+.club-facts small{display:block;margin-top:4px;color:#999;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.08em}
+/* ---- subpage: INFO ---- */
+.page-hero{padding:190px 0 60px;border-bottom:1px solid var(--line)}
+.breadcrumb{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#888}
+.breadcrumb a{color:var(--yellow)}
+.info-block{max-width:760px;padding:56px 0;border-bottom:1px solid var(--line)}
+.info-block:last-child{border-bottom:0}
+.info-block h2{font-size:clamp(30px,4vw,50px);margin:12px 0 20px}
+.info-block p{color:#aaa;line-height:1.6;margin:0 0 14px;max-width:640px}
+.info-list{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.info-list li{list-style:none;border-left:2px solid var(--yellow);padding-left:16px;color:#ccc;line-height:1.5}
+.photo{min-height:540px;background:linear-gradient(145deg,#333,#111 60%,#514800);position:relative;overflow:hidden}
+.photo:before{content:"SQUASH";position:absolute;right:-30px;bottom:-35px;font-size:150px;font-weight:950;letter-spacing:-.1em;color:rgba(255,255,255,.05);transform:rotate(-10deg)}
+.photo-label{position:absolute;bottom:24px;left:24px;background:var(--yellow);color:#000;padding:10px 14px;font-weight:900;font-size:11px;text-transform:uppercase}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.package{background:#151515;border:1px solid #292929;padding:34px;display:flex;flex-direction:column;min-height:390px}.package.featured{border:2px solid var(--yellow)}
+.package h3{font-size:30px;margin:15px 0}.price{font-size:44px;font-weight:950;letter-spacing:-.06em;margin-bottom:24px}.package ul{padding-left:18px;color:#aaa;line-height:1.8}.package .btn{margin-top:auto}
+.faq{max-width:980px;margin:auto}.faq details{border-top:1px solid #333;padding:22px 0}.faq details:last-child{border-bottom:1px solid #333}.faq summary{cursor:pointer;font-size:21px;font-weight:800;list-style:none;display:flex;justify-content:space-between}.faq summary:after{content:"+";color:var(--yellow)}
+.deep{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.deep a{background:#151515;min-height:210px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #282828}.deep strong{font-size:24px}.arrow{font-size:30px;color:var(--yellow)}
+.cycle{background:var(--yellow);color:#000}.cycle h2{max-width:850px}.cities{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:55px}.city{border-top:2px solid #000;padding:22px 0}.city b{font-size:44px;letter-spacing:-.06em}.city span{display:block;text-transform:uppercase;font-weight:900;font-size:11px;margin-top:8px}
+.tour{display:grid;grid-template-columns:1fr 2fr;gap:50px}.tour-list{border-top:1px solid #333}.tour-row{display:grid;grid-template-columns:1.4fr .8fr .7fr auto;gap:15px;padding:20px 0;border-bottom:1px solid #333;align-items:center}.tour-row b{font-size:18px}.tour-row span{color:#999;font-size:12px}
+.cta{padding:120px 0;background:linear-gradient(120deg,#161616,#090909)}.cta-inner{display:flex;justify-content:space-between;align-items:end;gap:40px}.cta h2{font-size:clamp(55px,9vw,125px);max-width:900px}.cta p{color:#aaa;max-width:450px;line-height:1.5}
+footer{padding:45px 0;border-top:1px solid #292929}.footer{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer small{color:#777}.footer-links{display:flex;gap:22px;font-size:11px;text-transform:uppercase;font-weight:800}
+@media(max-width:900px){
+ .links{display:none}.facts{grid-template-columns:repeat(2,1fr)}.fact:nth-child(2n){border-right:0}.expect,.tour,.cta-inner{grid-template-columns:1fr;display:grid}.packages{grid-template-columns:1fr}.deep{grid-template-columns:repeat(2,1fr)}.cities{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+ .container,.hero-content{padding-left:20px;padding-right:20px}.nav{height:68px}.hero{min-height:88vh}.hero-content{padding-top:120px;padding-bottom:55px}h1{font-size:62px}.hero-meta{font-size:15px;gap:18px}.section{padding:75px 0}.section-head{display:block}.facts{grid-template-columns:1fr 1fr}.fact{padding:22px 14px}.fact b{font-size:39px}.cards,.deep{grid-template-columns:1fr}.photo{min-height:330px}.tour-row{grid-template-columns:1fr 1fr}.tour-row .btn{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html">POLISH <span>MASTERS</span> OPEN</a>
+    <nav class="links">
+      <a href="index.html#expect">Doświadczenie</a><a href="index.html#packages">Pakiety</a><a href="index.html#schedule">Harmonogram</a><a href="index.html#faq">FAQ</a><a href="index.html#cycle">Cykl PMO</a>
+    </nav>
+    <div class="actions"><button class="lang">PL / EN</button><a class="btn" href="index.html#register">Zapisz się</a></div>
+  </div>
+</header>
+
+<main>
+<section class="page-hero dark">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Polish Masters Open</a> / Info</div>
+    <h1 style="margin-top:14px;">INFO I<br>REGULAMIN.</h1>
+    <p class="lead" style="margin-top:20px;">Wszystko, co warto wiedzieć przed zapisem — w jednym miejscu.</p>
+  </div>
+</section>
+
+<section class="section dark">
+<div class="container">
+
+  <div class="info-block">
+    <div class="kicker">O turnieju</div>
+    <h2>Dla kogo<br>jest PMO.</h2>
+    <p>Polish Masters Open to wydarzenie dla zawodników powyżej 35 lat, którzy lubią łączyć sport i rywalizację z podróżowaniem i poznawaniem nowych ludzi.</p>
+    <p>Turniej rozgrywany jest w cyklu czterech miast — każdego roku w innym polskim mieście. Pełną koncepcję znajdziesz w sekcji „Cykl PMO” na stronie głównej.</p>
+  </div>
+
+  <div class="info-block">
+    <div class="kicker">Uczestnictwo i licencje</div>
+    <h2>Co musisz<br>mieć, żeby zagrać.</h2>
+    <ul class="info-list">
+      <li>Minimalny wiek: 35 lat (kategorie wiekowe co 5 lat).</li>
+      <li>Aktywna licencja ESF — wymagana do udziału w turnieju międzynarodowym.</li>
+      <li>Aktywna licencja PZSQ — jeśli chcesz liczyć się do rankingu krajowego.</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <div class="kicker">Zapisy i płatność</div>
+    <h2>Jak się<br>zapisać.</h2>
+    <p>Zapisy i płatność odbywają się w systemie Best of Five (BO5). Wybierz pakiet startowy → zapisz się → zapłać → gotowe.</p>
+    <a href="index.html#packages" class="btn" style="margin-top:8px;display:inline-flex;">Zobacz pakiety →</a>
+  </div>
+
+  <div class="info-block">
+    <div class="kicker">Dojazd</div>
+    <h2>Transport<br>i parking.</h2>
+    <ul class="info-list">
+      <li>Lotnisko Poznań–Ławica — ok. 15 minut od klubu.</li>
+      <li>Dworzec Poznań Główny — ok. 10 minut od klubu.</li>
+      <li>Parking dostępny na miejscu (liczba miejsc ograniczona).</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <div class="kicker">Zakwaterowanie</div>
+    <h2>Gdzie się<br>zatrzymać.</h2>
+    <p>Fair Play Squash Club ma własny hotel na miejscu. Możesz go zarezerwować w ramach pakietu Pełne doświadczenie / Premium, albo zorganizować nocleg samodzielnie w mieście.</p>
+  </div>
+
+  <div class="info-block">
+    <div class="kicker">Kontakt</div>
+    <h2>Masz jeszcze<br>pytania?</h2>
+    <p>Jeśli czegoś nie znajdziesz w FAQ na stronie głównej, napisz do nas:</p>
+    <p><a href="mailto:biuro@polskisquash.pl" style="color:var(--yellow);font-weight:800;">biuro@polskisquash.pl</a></p>
+  </div>
+
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer">
+  <div class="logo">POLISH <span>MASTERS</span> OPEN × PZSQ</div>
+  <div class="footer-links"><a href="#">Regulamin</a><a href="#">Prywatność</a><a href="#">Kontakt</a></div>
+  <small>© 2026 Polski Związek Squasha</small>
+</div>
+</footer>
+</body>
+</html>
