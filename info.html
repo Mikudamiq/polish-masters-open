@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Info i regulamin — Polish Masters Open</title>
+<title>Zasady i regulamin — Polish Masters Open</title>
 <meta name="description" content="Pełne informacje o Polish Masters Open: uczestnictwo, zapisy, dojazd i zakwaterowanie.">
 <style>
 :root{
@@ -17,7 +17,13 @@ a{color:inherit;text-decoration:none}.container{max-width:var(--max);margin:auto
 .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .logo{font-weight:900;letter-spacing:-1px;font-size:20px}.logo span{color:var(--yellow)}
 .links{display:flex;gap:28px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-.actions{display:flex;align-items:center;gap:12px}.lang{font-size:12px;font-weight:800;border:1px solid #444;padding:10px 12px}.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);color:#000;padding:14px 22px;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;border:0}
+.actions{display:flex;align-items:center;gap:12px}
+.lang-switch{display:flex;border:1px solid #444;text-transform:uppercase;font-weight:800;font-size:12px;letter-spacing:.05em}
+.lang-switch button{background:transparent;color:#777;border:0;padding:10px 14px;cursor:pointer;font:inherit;letter-spacing:inherit;transition:background .15s,color .15s}
+.lang-switch button+button{border-left:1px solid #444}
+.lang-switch button.active{background:var(--yellow);color:#000}
+.lang-switch button:not(.active):hover{color:var(--white)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);color:#000;padding:14px 22px;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;border:0}
 .hero{min-height:94vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:
 linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.56) 45%,rgba(0,0,0,.3) 100%),
 linear-gradient(135deg,#222 0%,#101010 52%,#3a3200 100%)}
@@ -87,18 +93,24 @@ footer{padding:45px 0;border-top:1px solid #292929}.footer{display:flex;justify-
   <div class="container nav">
     <a class="logo" href="index.html">POLISH <span>MASTERS</span> OPEN</a>
     <nav class="links">
-      <a href="index.html#expect">Doświadczenie</a><a href="index.html#packages">Pakiety</a><a href="index.html#schedule">Harmonogram</a><a href="index.html#faq">FAQ</a><a href="index.html#cycle">Cykl PMO</a>
+      <a href="index.html#expect" data-i18n="nav_experience">Doświadczenie</a><a href="index.html#packages" data-i18n="nav_packages">Pakiety</a><a href="index.html#schedule" data-i18n="nav_schedule">Harmonogram</a><a href="index.html#faq" data-i18n="nav_faq">FAQ</a><a href="index.html#cycle" data-i18n="nav_cycle">Cykl PMO</a>
     </nav>
-    <div class="actions"><button class="lang">PL / EN</button><a class="btn" href="index.html#register">Zapisz się</a></div>
+    <div class="actions">
+      <div class="lang-switch" role="group" aria-label="Wybór języka / Language">
+        <button type="button" data-lang="pl" class="active" aria-pressed="true">PL</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn" href="index.html#register" data-i18n="btn_zapisz_sie">Zapisz się</a>
+    </div>
   </div>
 </header>
 
 <main>
 <section class="page-hero dark">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Polish Masters Open</a> / Info</div>
-    <h1 style="margin-top:14px;">INFO I<br>REGULAMIN.</h1>
-    <p class="lead" style="margin-top:20px;">Wszystko, co warto wiedzieć przed zapisem — w jednym miejscu.</p>
+    <div class="breadcrumb"><a href="index.html">Polish Masters Open</a> / <span data-i18n="ph_breadcrumb">Zasady</span></div>
+    <h1 style="margin-top:14px;" data-i18n="ph_h1">ZASADY I<br>REGULAMIN.</h1>
+    <p class="lead" style="margin-top:20px;" data-i18n="ph_lead">Wszystko, co warto wiedzieć przed zapisem — w jednym miejscu.</p>
   </div>
 </section>
 
@@ -106,50 +118,50 @@ footer{padding:45px 0;border-top:1px solid #292929}.footer{display:flex;justify-
 <div class="container">
 
   <div class="info-block">
-    <div class="kicker">O turnieju</div>
-    <h2>Dla kogo<br>jest PMO.</h2>
-    <p>Polish Masters Open to wydarzenie dla zawodników powyżej 35 lat, którzy lubią łączyć sport i rywalizację z podróżowaniem i poznawaniem nowych ludzi.</p>
-    <p>Turniej rozgrywany jest w cyklu czterech miast — każdego roku w innym polskim mieście. Pełną koncepcję znajdziesz w sekcji „Cykl PMO” na stronie głównej.</p>
+    <div class="kicker" data-i18n="b1_kicker">O turnieju</div>
+    <h2 data-i18n="b1_h2">Dla kogo<br>jest PMO.</h2>
+    <p data-i18n="b1_p1">Polish Masters Open to wydarzenie dla zawodników powyżej 35 lat, którzy lubią łączyć sport i rywalizację z podróżowaniem i poznawaniem nowych ludzi.</p>
+    <p data-i18n="b1_p2">Turniej rozgrywany jest w cyklu czterech miast — każdego roku w innym polskim mieście. Pełną koncepcję znajdziesz w sekcji „Cykl PMO” na stronie głównej.</p>
   </div>
 
   <div class="info-block">
-    <div class="kicker">Uczestnictwo i licencje</div>
-    <h2>Co musisz<br>mieć, żeby zagrać.</h2>
+    <div class="kicker" data-i18n="b2_kicker">Uczestnictwo i licencje</div>
+    <h2 data-i18n="b2_h2">Co musisz<br>mieć, żeby zagrać.</h2>
     <ul class="info-list">
-      <li>Minimalny wiek: 35 lat (kategorie wiekowe co 5 lat).</li>
-      <li>Aktywna licencja ESF — wymagana do udziału w turnieju międzynarodowym.</li>
-      <li>Aktywna licencja PZSQ — jeśli chcesz liczyć się do rankingu krajowego.</li>
+      <li data-i18n="b2_li1">Minimalny wiek: 35 lat (kategorie wiekowe co 5 lat).</li>
+      <li data-i18n="b2_li2">Aktywna licencja ESF — wymagana do udziału w turnieju międzynarodowym.</li>
+      <li data-i18n="b2_li3">Aktywna licencja PZSQ — jeśli chcesz liczyć się do rankingu krajowego.</li>
     </ul>
   </div>
 
   <div class="info-block">
-    <div class="kicker">Zapisy i płatność</div>
-    <h2>Jak się<br>zapisać.</h2>
-    <p>Zapisy i płatność odbywają się w systemie Best of Five (BO5). Wybierz pakiet startowy → zapisz się → zapłać → gotowe.</p>
-    <a href="index.html#packages" class="btn" style="margin-top:8px;display:inline-flex;">Zobacz pakiety →</a>
+    <div class="kicker" data-i18n="b3_kicker">Zapisy i płatność</div>
+    <h2 data-i18n="b3_h2">Jak się<br>zapisać.</h2>
+    <p data-i18n="b3_p">Zapisy i płatność odbywają się w systemie Tournament Software. Wybierz pakiet startowy → zapisz się → zapłać → gotowe.</p>
+    <a href="index.html#packages" class="btn" style="margin-top:8px;display:inline-flex;" data-i18n="b3_btn">Zobacz pakiety →</a>
   </div>
 
   <div class="info-block">
-    <div class="kicker">Dojazd</div>
-    <h2>Transport<br>i parking.</h2>
+    <div class="kicker" data-i18n="b4_kicker">Dojazd</div>
+    <h2 data-i18n="b4_h2">Transport<br>i parking.</h2>
     <ul class="info-list">
-      <li>Lotnisko Poznań–Ławica — ok. 15 minut od klubu.</li>
-      <li>Dworzec Poznań Główny — ok. 10 minut od klubu.</li>
-      <li>Parking dostępny na miejscu (liczba miejsc ograniczona).</li>
+      <li data-i18n="b4_li1">Lotnisko Poznań–Ławica — ok. 20 minut autem od klubu.</li>
+      <li data-i18n="b4_li2">Dworzec Poznań Główny — ok. 15 minut autem od klubu.</li>
+      <li data-i18n="b4_li3">Parking dostępny na miejscu (liczba miejsc ograniczona).</li>
     </ul>
   </div>
 
   <div class="info-block">
-    <div class="kicker">Zakwaterowanie</div>
-    <h2>Gdzie się<br>zatrzymać.</h2>
-    <p>Fair Play Squash Club ma własny hotel na miejscu. Możesz go zarezerwować w ramach pakietu Pełne doświadczenie / Premium, albo zorganizować nocleg samodzielnie w mieście.</p>
+    <div class="kicker" data-i18n="b5_kicker">Zakwaterowanie</div>
+    <h2 data-i18n="b5_h2">Gdzie się<br>zatrzymać.</h2>
+    <p data-i18n="b5_p">Fair Play Squash Club ma własny hotel na miejscu. Możesz go zarezerwować w ramach pakietu Pełne doświadczenie / Premium, albo zorganizować nocleg samodzielnie w mieście.</p>
   </div>
 
   <div class="info-block">
-    <div class="kicker">Kontakt</div>
-    <h2>Masz jeszcze<br>pytania?</h2>
-    <p>Jeśli czegoś nie znajdziesz w FAQ na stronie głównej, napisz do nas:</p>
-    <p><a href="mailto:biuro@polskisquash.pl" style="color:var(--yellow);font-weight:800;">biuro@polskisquash.pl</a></p>
+    <div class="kicker" data-i18n="b6_kicker">Kontakt</div>
+    <h2 data-i18n="b6_h2">Masz jeszcze<br>pytania?</h2>
+    <p data-i18n="b6_p">Jeśli czegoś nie znajdziesz w FAQ na stronie głównej, napisz do organizatora:</p>
+    <p><a href="mailto:m.zak@polskisquash.pl" style="color:var(--yellow);font-weight:800;">m.zak@polskisquash.pl</a></p>
   </div>
 
 </div>
@@ -159,9 +171,165 @@ footer{padding:45px 0;border-top:1px solid #292929}.footer{display:flex;justify-
 <footer>
 <div class="container footer">
   <div class="logo">POLISH <span>MASTERS</span> OPEN × PZSQ</div>
-  <div class="footer-links"><a href="#">Regulamin</a><a href="#">Prywatność</a><a href="#">Kontakt</a></div>
-  <small>© 2026 Polski Związek Squasha</small>
+  <div class="footer-links"><a href="#" data-i18n="footer_link1">Regulamin</a><a href="#" data-i18n="footer_link2">Prywatność</a><a href="#" data-i18n="footer_link3">Kontakt</a></div>
+  <small data-i18n="footer_copy">© 2026 Polski Związek Squasha</small>
 </div>
 </footer>
+<script>
+(function(){
+  var dict = {
+    en: {
+      nav_experience:"Experience", nav_packages:"Packages", nav_schedule:"Schedule", nav_faq:"FAQ", nav_cycle:"PMO Cycle",
+      btn_zapisz_sie:"Register",
+
+      hero_eyebrow:"Polish Masters Open · 2026 Edition",
+      hero_h1:"Play.<br>Explore.<br>Discover.",
+      hero_meta_date:"16–18 OCTOBER 2026", hero_meta_city:"POZNAŃ, POLAND", hero_meta_cat:"ESF MASTERS",
+      hero_cta:"Register via Tournament Software →",
+      hero_note:"A professionally organised Masters squash tournament — and your journey through Poland.",
+
+      ticker_1:"REGISTRATION CLOSES · 11.10.2026", ticker_2:"ESF MASTERS", ticker_3:"35+ 40+ 45+ 50+ 55+ 60+ 65+",
+
+      facts_kicker:"Key facts",
+      facts_h2:"Everything<br>in one place.",
+      facts_lead:"A tournament built around great squash, an international community, and the experience of discovering another Polish city.",
+      fact1_label:"Days", fact2_label:"Age categories", fact3_label:"Target countries", fact4_label:"Masters players", fact5_label:"New city to explore",
+
+      expect_kicker:"What to expect",
+      expect_h2:"Come for the squash.<br>Stay for the full experience.",
+      expect_lead:"From morning matches to evening conversations — PMO is more than a tournament. Meet players from across Europe, compete, relax and discover Poznań.",
+      expect_li1_b:"Competitive play", expect_li1_t:"Matches from morning to evening — several days of well-organised Masters competition.",
+      expect_li2_b:"International crowd", expect_li2_t:"Meet players from other countries and become part of the Masters community.",
+      expect_li3_b:"Great venue", expect_li3_t:"High-quality courts with an on-site restaurant and accommodation, plus shows and tastings between matches.",
+      expect_li4_b:"Discover Poznań", expect_li4_t:"Turn the tournament into a city break — food, architecture, culture and local attractions.",
+
+      club_kicker:"Host club · 2026",
+      club_fact1_label:"Airport", club_fact2_label:"Train station", club_fact3_label:"City centre",
+      club_fact4_val:"Hotel, restaurant, courts", club_fact4_label:"On site",
+
+      city_kicker:"Host city",
+      city_h2:"Poznań<br>awaits.",
+      city_lead:"Your tournament destination is also the next Polish city to discover. We update this section for every new PMO edition.",
+      map_airport:"ŁAWICA AIRPORT", map_center:"OLD MARKET · CENTRE", map_center_sub:"restaurants and attractions",
+      map_club:"FAIR PLAY SQUASH CLUB", map_club_sub:"tournament courts", map_hotel_sub:"on club grounds",
+      map_caption:"Illustrative map — not to scale",
+
+      card1_num:"TRAVEL", card1_h3:"Airport", card1_p:"20 min by car",
+      card2_num:"STAY", card2_h3:"Accommodation",
+      card3_num:"FOOD", card3_h3:"Restaurants",
+      card4_num:"EXPLORE", card4_h3:"Things to do", card4_p:"Old Market Square in Poznań",
+
+      pkg_kicker:"Starter packages",
+      pkg_h2:"Choose your<br>package.",
+      pkg_lead:"Packages are provisional until the final event details are confirmed. Every button leads to Tournament Software.",
+      pkg1_kicker:"Standard", pkg1_h3:"Masters Entry",
+      pkg2_kicker:"Recommended", pkg2_h3:"Full Experience", pkg2_li4:"2 nights at the hotel",
+      pkg3_kicker:"Full", pkg3_h3:"Premium", pkg3_li4:"3 nights at the hotel",
+      pkg_li_entry:"Tournament entry", pkg_li_esf:"ESF levy", pkg_li_tshirt:"T-shirt",
+      pkg_btn:"Choose package",
+
+      sched_kicker:"All categories",
+      sched_h2:"Schedule.",
+      sched_lead:"A flexible event schedule, adapted to different age categories and stages of competition.",
+      day1_b:"Thursday · 15 Oct", day1_span:"Check-in / Warm-up",
+      day2_b:"Friday · 16 Oct", day2_span:"First day",
+      day3_b:"Saturday · 17 Oct", day3_span:"Matches up to the semi-finals",
+      day4_b:"Sunday · 18 Oct", day4_span:"Finals",
+      day5_b:"Sunday · 18 Oct", day5_span:"Medal ceremony with national anthems for the winners",
+      btn_details:"Details",
+
+      faq_kicker:"Good to know",
+      faq_q1:"Who can play?", faq_a1:"PMO is open to Masters players aged over 35 who hold an ESF licence.",
+      faq_q2:"Do I need an ESF licence?", faq_a2:"Yes. Players should hold an active ESF licence; for points to count towards the national ranking in Poland, an active PZSQ licence is also required.",
+      faq_q3:"How do I register?", faq_a3:"Registration takes place externally, via Tournament Software. Use any “Register” button on the site.",
+      faq_q4:"Where can I stay?", faq_a4:"The tournament venue has its own on-site hotel.",
+      faq_q5:"What about transport?", faq_a5:"The airport is about 20 minutes by car from the club. For an additional fee, the organiser can arrange an airport transfer.",
+
+      deep_kicker:"Want to know more?",
+      deep_h2:"All the details<br>right here.",
+      tile1:"RULES", tile2:"SCHEDULE", tile3:"REGISTER", tile4:"PMO CYCLE", tile5:"FAQ",
+
+      cycle_kicker:"PMO Concept",
+      cycle_h2:"One tournament.<br>Four cities.<br>One journey through Poland.",
+      cycle_p:"Polish Masters Open is an annual journey: a different tournament, a different Polish city and a new experience every year. Come back for the squash — stay for the people, places and memories.",
+
+      tour_kicker:"Discover more squash in Poland",
+      tour_lead:"A quick overview of national Masters tournaments for players who want to see even more of Poland.",
+      city_legionowo:"Legionowo near Warsaw", city_sosnowiec:"Sosnowiec near Katowice",
+      tour_special:"Polish Individual Masters Championships (Polish citizens only)",
+
+      cta_h2:"Be part of it.",
+      cta_p:"An international crowd. Different Polish cities. Your next Masters experience.",
+      cta_btn:"Register via Tournament Software →",
+
+      footer_link1:"Rules", footer_link2:"Privacy", footer_link3:"Contact",
+      footer_copy:"© 2026 Polish Squash Federation",
+
+      /* podstrona: zasady i regulamin */
+      ph_breadcrumb:"Rules",
+      ph_h1:"RULES AND<br>REGULATIONS.",
+      ph_lead:"Everything worth knowing before you register — in one place.",
+      b1_kicker:"About the tournament", b1_h2:"Who PMO<br>is for.",
+      b1_p1:"Polish Masters Open is an event for players over 35 who like to combine sport and competition with travel and meeting new people.",
+      b1_p2:"The tournament is held in a four-city cycle — a different Polish city every year. You'll find the full concept in the “PMO Cycle” section on the home page.",
+      b2_kicker:"Eligibility and licences", b2_h2:"What you need<br>to play.",
+      b2_li1:"Minimum age: 35 (age categories every 5 years).",
+      b2_li2:"Active ESF licence — required to take part in the international tournament.",
+      b2_li3:"Active PZSQ licence — if you want to count towards the national ranking.",
+      b3_kicker:"Registration and payment", b3_h2:"How to<br>register.",
+      b3_p:"Registration and payment take place via Tournament Software. Choose a starter package → register → pay → done.",
+      b3_btn:"See packages →",
+      b4_kicker:"Getting there", b4_h2:"Transport<br>and parking.",
+      b4_li1:"Poznań–Ławica Airport — about 20 minutes by car from the club.",
+      b4_li2:"Poznań Główny train station — about 15 minutes by car from the club.",
+      b4_li3:"On-site parking available (limited spaces).",
+      b5_kicker:"Accommodation", b5_h2:"Where to<br>stay.",
+      b5_p:"Fair Play Squash Club has its own on-site hotel. You can book it as part of the Full Experience / Premium package, or arrange your own accommodation in the city.",
+      b6_kicker:"Contact", b6_h2:"Still have<br>questions?",
+      b6_p:"If you can't find what you're looking for in the FAQ on the home page, contact the organiser:"
+    }
+  };
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    if (lang === 'en') {
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var key = el.getAttribute('data-i18n');
+        if (dict.en[key] !== undefined) el.innerHTML = dict.en[key];
+      });
+    } else {
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        if (el.hasAttribute('data-pl-original')) {
+          el.innerHTML = el.getAttribute('data-pl-original');
+        }
+      });
+    }
+    document.querySelectorAll('.lang-switch button').forEach(function(btn){
+      var isActive = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+    try { localStorage.setItem('pmo_lang', lang); } catch(e){}
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    // zapamietaj oryginalny polski tekst kazdego elementu przed pierwsza podmiana
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      el.setAttribute('data-pl-original', el.innerHTML);
+    });
+
+    var saved = 'pl';
+    try { saved = localStorage.getItem('pmo_lang') || 'pl'; } catch(e){}
+    applyLang(saved);
+
+    document.querySelectorAll('.lang-switch button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        applyLang(btn.getAttribute('data-lang'));
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
